@@ -1,0 +1,9 @@
+.button_edit {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: center / 60% no-repeat url('/src/assets/pen.svg')
+  }

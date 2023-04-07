@@ -1,0 +1,45 @@
+.product_picture {
+  width: 200px;
+  height: 200px;
+}
+
+.heart_icon-black {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 33px;
+  height: 33px;
+
+}
+
+.heart_icon-red {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 33px;
+  height: 33px;
+
+}
+
+.button_cart-cart {
+  width: 50px;
+  height: 38px;
+}
+
+.button_cart-done {
+  width: 50px;
+  height: 38px;
+}
+
+.on {
+  color: gold;
+}
+
+.off {
+  color: #ccc;
+}
+
+.trash {
+  width: 30px;
+  height: 30px;
+}
