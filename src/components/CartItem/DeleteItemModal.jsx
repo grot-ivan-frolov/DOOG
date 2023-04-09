@@ -9,16 +9,20 @@ function DeleteItemModal({
   const dispatch = useDispatch()
   const deleteHandler = () => {
     dispatch(deleteProduct(id))
+    setIsDeleteModalOpen(false)
   }
   const closeDeleteModalHandler = () => {
     setIsDeleteModalOpen(false)
   }
+  // console.log({ title })
   return (
     <Modal isOpen={isOpen} closeHandler={closeDeleteModalHandler}>
       <p>Удалить этот товар из корзины?</p>
       {' '}
       <b>
+        &quot;
         {title}
+        &quot;
       </b>
       <div className="d-flex justify-content-around align-items-center mt-4">
         <button

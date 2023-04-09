@@ -10,7 +10,6 @@ import { getTokenSelector } from '../../Redux/slices/userSlice'
 import Loader from '../Loader/Loader'
 import Modal from '../Modal/Modal'
 import SuccessModal from './SuccessModal'
-// import SuccessModal from './SuccessModal'
 
 const DeleteProductModal = ({
   setIsDeleteModalOpen, isOpen, id, title,
@@ -61,7 +60,7 @@ const DeleteProductModal = ({
           className="btn btn-success mx-2"
           onClick={closeDeleteModalHandler}
         >
-          Cancel
+          Отмена
         </button>
         <button
           onClick={deleteHandler}
@@ -69,7 +68,7 @@ const DeleteProductModal = ({
           className="btn btn-danger mx-2"
           data-label="notNavigate"
         >
-          Delete
+          Удалить
         </button>
       </div>
       <SuccessModal

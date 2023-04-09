@@ -1,19 +1,23 @@
 /* eslint-disable max-len */
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import imageHeader from '../Image/logotip.jpg'
 import headerStales from './header.module.css'
 import cart from '../Image/basket.jpg'
 import { getAllCartProductsSelector } from '../../Redux/slices/cartSlice'
 import heard from '../Image/herd.jpg'
-import { getUserSelector } from '../../Redux/slices/userSlice'
+import { getUserSelector, logOut } from '../../Redux/slices/userSlice'
 import person from '../Image/persona.png'
 
 export function Header() {
   const cartProducts = useSelector(getAllCartProductsSelector)
   const { id: userId } = useSelector(getUserSelector)
-  // const userId = 'NTCN'
-  console.log({ userId })
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleLogOut = () => {
+    dispatch(logOut())
+    navigate('/signin')
+  }
   return (
     <header className={headerStales.wr}>
       <div className={headerStales.logo}>
@@ -44,6 +48,7 @@ export function Header() {
               {cartProducts.length}
             </span>
           </div>
+          <button className="btn btn-info mx-2" type="button" onClick={handleLogOut}>Выйти</button>
         </div>
       ) : (
         <div>

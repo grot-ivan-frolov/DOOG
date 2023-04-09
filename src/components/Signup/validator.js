@@ -14,7 +14,7 @@ export const Signupformvalidator = Yup.object({
 
   password: Yup.string()
     .required('Введите парль')
-    .min(5, 'Пароль должен быть не менее 5 слов'),
+    .min(6, 'Пароль должен быть не менее 6 слов'),
 
   confirmPassword: Yup.string()
     .required('Подтвердите пароль')

@@ -11,6 +11,7 @@ import DeleteItemModal from './DeleteItemModal'
 export function CartItem({
   name, pictures, price, id, description, stock, discount, isPicked, count,
 }) {
+  // console.log(name)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)

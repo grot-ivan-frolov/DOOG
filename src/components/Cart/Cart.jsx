@@ -29,7 +29,7 @@ function Cart() {
   const {
     data: cartProducts, isLoading, isError, error,
   } = useQuery({
-    qyeryKey: [getQueryCartKey(getKey)],
+    queryKey: [getQueryCartKey(getKey)],
     queryFn: () => DogFoodApiConst.getProductsByIds(cart.map((product) => product.id), userToken),
     enabled: !!(userToken),
   })
@@ -38,7 +38,7 @@ function Cart() {
     dispatch(clearCart())
   }
   if (cartProducts) {
-    const isAllCardPicked = () => cart.filter((item) => (item.isPicked === true).length === cart.length)
+    const isAllCardPicked = () => (cart.filter((item) => (item.isPicked === true)).length === cart.length)
     const findAllPickedProducts = () => {
       const allPickedProducts = []
       cart.forEach((item) => {
@@ -49,6 +49,7 @@ function Cart() {
     const getCartProductById = (idItem) => cartProducts.find((product) => product._id === idItem)
     const getAllCartStateProductById = (idItem) => cart.find((product) => product.id === idItem)
     const pickAllroductsHandler = () => {
+      console.log({ isAllCardPicked })
       if (!isAllCardPicked()) dispatch(pickAllProducts())
       else dispatch(notPickAllProducts())
     }
@@ -96,6 +97,7 @@ function Cart() {
                 <CartItem
                   key={item._id}
                   id={item._id}
+                  name={item.name}
                   price={item.price}
                   pictures={item.pictures}
                   stock={item.stock}

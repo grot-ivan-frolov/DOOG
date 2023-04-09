@@ -50,7 +50,7 @@ function SignUp() {
         validationSchema={Signupformvalidator}
         onSubmit={(values) => handleSubmit(values)}
       >
-        <Form className={signUpStyles.form}>
+        <Form className={signUpStyles}>
 
           <p>
             <Field name="email" type="email" placeholder="email" />

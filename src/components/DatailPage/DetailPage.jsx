@@ -16,6 +16,8 @@ import DeleteProductModal from './DeleteProductModal'
 import EditProductModal from './EditProductModal'
 import trash from '../Image/trash.png'
 import Comments from './Comments'
+import basket from '../Image/basket.jpg'
+import headerStales from '../Header/header.module.css'
 
 function DetailPage() {
   const { id } = useParams()
@@ -130,9 +132,11 @@ function DetailPage() {
               )}
               <button
                 type="button"
-                className={isInCart(id) ? 'button__cart-done btn btn-primary' : 'button__cart-cart btn btn-primary'}
+                className={isInCart(id) ? 'button_cart-done btn btn-primary' : 'button_cart-cart btn btn-primary'}
                 onClick={isInCart(id) ? removeFromCartHandler : moveToCartHandler}
-              />
+              >
+                <img src={basket} className={headerStales.cart} alt="" />
+              </button>
             </div>
           </div>
           <EditProductModal
